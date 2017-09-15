@@ -1,0 +1,106 @@
+/* ========================================================================== */
+/* BASE STYLES */
+/* ========================================================================== */
+//@import "bootstrap/bootstrap.less";
+@import "variables.less";
+@import "normalize.less";
+@import "lesshat.less";
+@import "helpers.less";
+@import "../../../node_modules/slick-carousel/slick/slick.less";
+@import (inline) "lightbox.css";
+ul{
+  list-style: none;
+}
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.column{
+  display: flex;
+  flex-direction: column
+}
+
+
+.main-slider{
+  width: 100%;
+  height:960px;
+  background: #eee;
+  position: relative;
+  .header{
+    padding-top: 45px;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    display: flex;
+    height: 235px;
+    background-image: linear-gradient(to bottom , rgba(0,0,0,0.2) , transparent);
+    .logo{
+      width: 320px;
+      height: 52px;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-image: url("../img/logo.png");
+      margin-right:74px;
+    }
+    .phone{
+      width: 460px;
+      margin-right: 52px;
+      .row;
+      svg{
+        margin-right:10px ;
+      }
+        .number{
+          color:#fff;
+          font-family: @font-ubuntu;
+          line-height: 30px;
+          font-size: 24px;
+          margin-right: 20px;
+        }
+        .call-back{
+          color:@color-link;
+          border-bottom: 1px dashed @color-link;
+        }
+
+    }
+    .place{
+      .row;
+      margin-right:30px;
+      svg{
+        margin-right: 10px;
+      }
+      .address{
+        font-family: @font-ubuntu;
+        font-size: 15px;
+        line-height: 20px;
+        color:#fff;
+      }
+    }
+    .lang{
+      padding: 0;
+      margin: 0;
+      .row;
+      li{
+       width: 52px;
+       height: 40px;
+       margin-right:2px;
+       font-family: @font-ubuntu;
+       border-radius: 15px;
+       color:#fff;
+       display: flex;
+       align-items:center;
+       justify-content: center;
+       border:2px solid transparent;
+       cursor: pointer;
+       &.active{
+          color:@color-link;
+          border:2px solid @color-link;
+        }
+      }
+    }
+  }
+}
+
+
+
