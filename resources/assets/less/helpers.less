@@ -159,7 +159,7 @@ a{
 	}
 	&-container{
 		width: 100%;
-		max-width:500px;
+		max-width:531px;
 		margin: 0px auto;
 		padding: 0;
 		background-color: #fff;
@@ -170,31 +170,27 @@ a{
 		border:1px solid rgb(228,228,228);
 	}
 	&-body{
-		padding:40px 60px;
+		padding:50px 50px;
 	}
 	&-close{
-		background-color: @color-yellow;
+		background-color:transparent;
 		position: absolute;
-		top:10px;
-		border-radius: 5px;
-		right:10px;
-		padding:9px;
+		top:-40px;
+		right:0px;
+		svg{
+			fill:rgba(255,255,255,0.5);
+		}
 		cursor: pointer;
 		&:hover{
-			background: @blue-dark;
 			svg{
 				fill:#fff;
 			}
-		}
-		svg{
-			fill:@blue-dark;
-			display: block;
 		}
 	}
 	&-callback-1{
 		.modal{
 			&-container{
-				max-width:500px;
+				max-width:525px;
 				width:~'calc(100% -	40px)';
 				text-align:left;
 				.title{
