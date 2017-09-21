@@ -34,6 +34,8 @@ require('viewport-units-buggyfill').init();
 
 require('lightbox2');
 
+
+
 require('slick-carousel');
 
 

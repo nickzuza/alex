@@ -55,50 +55,56 @@
                         </ul>
                     </div>
                 </div>
-                <modal v-if="callBack" v-on:close="callBack = false" v-cloak class="modal-base callback mobilemenu">
-                    <div class="modal-title">Мы Вам перезвоним</div>
-                    <div class="modal-input">
-                        <input type="text"
-                               v-model="call.name"
-                               placeholder="Ваше имя"
-                               v-validate="'required|min:2|max:30'"
-                               name="form1_name"
-                               v-model.lazy="call.name"
-                               data-vv-validate-on="none"
-                               :class="{ error: errors.has('form1_name')}"
-                               v-on:focus="removeError('form1_name');"
-                        >
-                        <div class="svg">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="26px" height="26px" viewBox="0 0 29.731 29.731" style="enable-background:new 0 0 29.731 29.731;" xml:space="preserve">
+                <modal v-if="callBack" v-on:close="closeMod" v-cloak class="modal-base callback mobilemenu">
+                    <section v-if="call.s === false">
+                        <div class="modal-title">Мы Вам перезвоним</div>
+                        <div class="modal-input">
+                            <input type="text"
+                                   v-model="call.name"
+                                   placeholder="Ваше имя"
+                                   v-validate="'required|min:2|max:30'"
+                                   name="form1_name"
+                                   v-model.lazy="call.name"
+                                   data-vv-validate-on="none"
+                                   :class="{ error: errors.has('form1_name')}"
+                                   v-on:focus="removeError('form1_name');"
+                            >
+                            <div class="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="26px" height="26px" viewBox="0 0 29.731 29.731" style="enable-background:new 0 0 29.731 29.731;" xml:space="preserve">
                                 <g>
                                     <path d="M23.895,29.731c-1.237,0-2.731-0.31-4.374-0.93c-3.602-1.358-7.521-4.042-11.035-7.556   c-3.515-3.515-6.199-7.435-7.558-11.037C-0.307,6.933-0.31,4.245,0.921,3.015c0.177-0.177,0.357-0.367,0.543-0.563   c1.123-1.181,2.392-2.51,4.074-2.45C6.697,0.05,7.82,0.77,8.97,2.201c3.398,4.226,1.866,5.732,0.093,7.478l-0.313,0.31   c-0.29,0.29-0.838,1.633,4.26,6.731c1.664,1.664,3.083,2.882,4.217,3.619c0.714,0.464,1.991,1.166,2.515,0.642l0.315-0.318   c1.744-1.769,3.25-3.296,7.473,0.099c1.431,1.15,2.15,2.272,2.198,3.433c0.069,1.681-1.27,2.953-2.452,4.075   c-0.195,0.186-0.385,0.366-0.562,0.542C26.103,29.424,25.126,29.731,23.895,29.731z M5.418,1C4.223,1,3.144,2.136,2.189,3.141   C1.997,3.343,1.811,3.539,1.628,3.722C0.711,4.638,0.804,7.045,1.864,9.856c1.31,3.472,3.913,7.266,7.33,10.683   c3.416,3.415,7.208,6.018,10.681,7.327c2.811,1.062,5.218,1.152,6.133,0.237c0.183-0.183,0.379-0.369,0.581-0.56   c1.027-0.976,2.192-2.082,2.141-3.309c-0.035-0.843-0.649-1.75-1.825-2.695c-3.519-2.83-4.503-1.831-6.135-0.176l-0.32,0.323   c-0.78,0.781-2.047,0.608-3.767-0.51c-1.193-0.776-2.667-2.038-4.379-3.751c-4.231-4.23-5.584-6.819-4.26-8.146l0.319-0.315   c1.659-1.632,2.66-2.617-0.171-6.138C7.245,1.651,6.339,1.037,5.496,1.001C5.47,1,5.444,1,5.418,1z"/>
                                 </g>
                             </svg>
+                            </div>
+
+
                         </div>
-
-
-                    </div>
-                    <div class="modal-input">
-                        <input type="text"
-                               placeholder="E-mail или номер телефона"
-                               v-validate="'required'"
-                               name="form1_email"
-                               v-model.lazy="call.email"
-                               data-vv-validate-on="none"
-                               :class="{ error: errors.has('form1_email')}"
-                               v-on:focus="removeError('form1_email');"
-                        >
-                        <div class="svg">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="26px" height="32px" viewBox="0 0 747.541 747.541" style="enable-background:new 0 0 747.541 747.541;" xml:space="preserve">
+                        <div class="modal-input">
+                            <input type="text"
+                                   placeholder="E-mail или номер телефона"
+                                   v-validate="'required'"
+                                   name="form1_email"
+                                   v-model.lazy="call.email"
+                                   data-vv-validate-on="none"
+                                   :class="{ error: errors.has('form1_email')}"
+                                   v-on:focus="removeError('form1_email');"
+                            >
+                            <div class="svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="26px" height="32px" viewBox="0 0 747.541 747.541" style="enable-background:new 0 0 747.541 747.541;" xml:space="preserve">
                                 <g>
                                     <g>
                                         <path d="M622.242,747.541H125.29c-31.708,0-57.512-25.805-57.512-57.537V554.809c-0.099-11.412,3.236-22.604,9.635-32.227    c25.52-38.303,66.38-67.85,121.434-87.859c49.89-18.158,112.009-28.139,174.906-28.139s125.016,9.992,174.919,28.139    c54.695,19.861,95.371,49.174,120.902,87.094c6.621,9.475,10.19,20.838,10.19,32.684v135.529    C679.778,721.736,653.961,747.541,622.242,747.541z M373.766,431.275c-60.093,0-119.198,9.475-166.47,26.645    c-50.001,18.182-86.774,44.529-109.316,78.336c-3.644,5.498-5.559,11.883-5.497,18.455v135.293    c0,18.096,14.711,32.82,32.808,32.82h496.939c18.108,0,32.832-14.725,32.832-32.82V554.488c0-6.756-2.025-13.217-5.854-18.701    c-22.679-33.684-59.303-59.809-108.983-77.867C492.976,440.75,433.846,431.275,373.766,431.275z M373.766,386.129    c-86.28,0-159.183-97.607-159.183-213.149C214.583,45.443,296.812,0,373.766,0C450.719,0,532.96,45.443,532.96,172.979    C532.948,288.509,460.058,386.129,373.766,386.129z M373.766,24.704c-84.205,0-134.478,55.424-134.478,148.275    c0,102.14,61.575,188.444,134.478,188.444c72.89,0,134.49-86.292,134.49-188.444C508.244,80.128,457.97,24.704,373.766,24.704z"/>
                                     </g>
                                 </g>
                             </svg>
+                            </div>
                         </div>
-                    </div>
-                    <div class="send-butt" @click="validate">заказать звонок</div>
+                        <div class="send-butt" @click="validate">заказать звонок</div>
+                    </section>
+                    <section v-if="call.s === true">
+                        <div class="modal-title">Заявка отправлена!</div>
+                    </section>
+
                 </modal>
             </div>
             <div class="home-slider">
@@ -159,11 +165,11 @@
         <section class="main-menu">
             <div class="container">
                 <ul>
-                    <li>О нас</li>
-                    <li>НАШИ Проекты</li>
-                    <li>Оборудование</li>
-                    <li>Отзывы</li>
-                    <li> Контакты</li>
+                    <li @click="moveTo('aboutUs')">О нас</li>
+                    <li @click="moveTo('ourProjects')">НАШИ Проекты</li>
+                    <li @click="moveTo('ourItems')">Оборудование</li>
+                    <li @click="moveTo('parteners')">Отзывы</li>
+                    <li @click="moveTo('maps')"> Контакты</li>
                 </ul>
             </div>
         </section>
@@ -212,12 +218,12 @@
                         <span class="text">Лет опыта</span>
                     </div>
                     <div class="num-block">
-                        <span class="number">25</span>
-                        <span class="text">Лет опыта</span>
+                        <span class="number">100+</span>
+                        <span class="text">Выполненых проектов</span>
                     </div>
                     <div class="num-block">
-                        <span class="number">25</span>
-                        <span class="text">Лет опыта</span>
+                        <span class="number">365/7</span>
+                        <span class="text">Бесплатная техподдержка</span>
                     </div>
                 </div>
             </div>
@@ -232,7 +238,7 @@
     <div class="title" @click="changeSlid(2)" :class="{active : block4.slid === 2}">Рестораны</div>
     </div>
     <div class="slider" id="sales" v-if="block4.slid === 1">
-        <div class="slide">
+        <div class="slide" id="sal1">
             <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
@@ -243,8 +249,89 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_1"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_2"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
+            </div>
+        </div>
+        <div class="slide" id="sal2">
+            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="task block">
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="solution block" >
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="imgs">
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal2_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal2_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
+            </div>
+        </div>
+        <div class="slide" id="sal3">
+            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="task block">
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="solution block" >
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="imgs">
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal3_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal3_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
+            </div>
+        </div>
+        <div class="slide" id="sal4">
+            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="task block">
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="solution block" >
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="imgs">
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal4_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal4_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
+            </div>
+        </div>
+        <div class="slide" id="sal5">
+            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="task block">
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="solution block" >
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="imgs">
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal5_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal5_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
+            </div>
+        </div>
+        <div class="slide" id="sal6">
+            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="task block">
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="solution block" >
+                <div class="title">Задача</div>
+                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
+            </div>
+            <div class="imgs">
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg"  data-lightbox="sal6_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal6_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
             </div>
         </div>
         <div class="slide">
@@ -258,68 +345,9 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-            <div class="task block">
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="solution block" >
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="imgs">
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-            <div class="task block">
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="solution block" >
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="imgs">
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-            <div class="task block">
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="solution block" >
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="imgs">
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-            </div>
-        </div>
-        <div class="slide">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-            <div class="task block">
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="solution block" >
-                <div class="title">Задача</div>
-                <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
-            </div>
-            <div class="imgs">
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
-                <div class="img" style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></div>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="roadtrip_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="roadtrip_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+
             </div>
         </div>
 
@@ -417,21 +445,33 @@
         </div>
     </div>
     </section>
-    <section class="calback calback1">
+        <section class="calback calback1">
         <div class="container">
             <div class="column">
                 <div class="title">Понравилось решение проекта?</div>
                 <div class="text">Свяжитесь с нами, чтобы узнать как быстро и экономно решить Ваш</div>
                 <div class="form">
-                    <input type="text" v-model="call.name" placeholder="Ваше имя">
-                    <input type="text" v-model="call.email"  placeholder="E-mail или номер телефона">
-                    <button class="send">Отправить</button>
+                    <input type="text" v-model="call.name" placeholder="Ваше имя"
+                           v-validate="'required|min:2|max:30'"
+                           name="form1_name"
+                           v-model.lazy="call.name"
+                           data-vv-validate-on="none"
+                           :class="{ error: errors.has('form1_name')}"
+                           v-on:focus="removeError('form1_name');">
+                    <input type="text" v-model="call.email"  placeholder="E-mail или номер телефона"
+                           v-validate="'required'"
+                           name="form1_email"
+                           v-model.lazy="call.email"
+                           data-vv-validate-on="none"
+                           :class="{ error: errors.has('form1_email')}"
+                           v-on:focus="removeError('form1_email');">
+                    <button class="send" @click="validate">Отправить</button>
                 </div>
             </div>
         </div>
 
     </section>
-    <section class="ourItems">
+        <section class="ourItems">
         <div class="block-title">Наше оборудование</div>
         <div class="container">
             <div class="slider">
@@ -470,7 +510,7 @@
             <a class="all" href="">Посмотреть все оборудование →</a>
         </div>
     </section>
-    <section class="parteners">
+        <section class="parteners">
         <div class="block-title">Нам доверяют</div>
         <div class="container">
             <div class="slider">
@@ -485,7 +525,7 @@
         </div>
         <div class="container"></div>
     </section>
-    <section class="calback2 calback">
+        <section class="calback2 calback">
         <div class="container">
             <div class="column">
                 <div class="title">Понравилось решение проекта?</div>
@@ -516,20 +556,156 @@
             </div>
         </div>
     </section>
-
-    <section class="maps">
+        <section class="maps">
         <div class="links">
             <div class="container">
                 <div class="row">
-                    <div class="link" :class="{active : maps.tab===1}" @click= "changeMap(1)">ЦЕНТРАЛЬНЫЙ ОФИС</div>
-                    <div class="link" :class="{active : maps.tab===2}" @click= "changeMap(2)">ЦЕНТРАЛЬНЫЙ ОФИС</div>
-                    <div class="link" :class="{active : maps.tab===3}" @click="changeMap(3)">ЦЕНТРАЛЬНЫЙ ОФИС</div>
-                    <div class="link" :class="{active : maps.tab===4}" @click="changeMap(4)">ЦЕНТРАЛЬНЫЙ ОФИС</div>
+                    <div class="link" :class="{active : maps.tab===0}" @click= "changeMap(0)">
+                        <div class="text">ЦЕНТРАЛЬНЫЙ ОФИС</div>
+                        <div class="mapM" id="place0"  :class="{active :  maps.tab===0}"></div>
+                        <div class="info">
+                                <div class="block-t">Центральный офис</div>
+                                <div class="text-block">
+                                    <div class="title-i">Адрес</div>
+                                    <div class="text-i">Республика Молдова, мун. Кишинев,
+                                        ул. Ион Прункул, 4/1
+                                    </div>
+                                </div>
+                                <div class="text-block">
+                                        <div class="title-i">Электронная почта</div>
+                                        <div class="text-i">
+                                            <a href="">office@alex-se.com</a>
+                                        </div>
+                                </div>
+                                <div class="text-block">
+                                        <div class="title-i">Телефоны</div>
+                                        <div class="text-i">
+                                            (+373) 22 24-45-72  — Офис<br>
+                                            (+373) 22 24-30-87  — Сервисный центр<br>
+                                            (+373) 22 29-67-29  — Факс<br>
+                                        </div>
+                                </div>
+                        </div>
+                    </div>
+
+
+                    <div class="link" :class="{active : maps.tab===1}" @click= "changeMap(1)">
+                        <div class="text">ЦЕНТРАЛЬНЫЙ ОФИС</div>
+                        <div class="mapM" id="place1"  :class="{active :  maps.tab===1}"></div>
+                        <div class="info">
+                            <div class="block-t">Центральный офис</div>
+                            <div class="text-block">
+                                <div class="title-i">Адрес</div>
+                                <div class="text-i">Республика Молдова, мун. Кишинев,
+                                    ул. Ион Прункул, 4/1
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <div class="title-i">Электронная почта</div>
+                                <div class="text-i">
+                                    <a href="">office@alex-se.com</a>
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <div class="title-i">Телефоны</div>
+                                <div class="text-i">
+                                    (+373) 22 24-45-72  — Офис<br>
+                                    (+373) 22 24-30-87  — Сервисный центр<br>
+                                    (+373) 22 29-67-29  — Факс<br>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="link" :class="{active : maps.tab===2}" @click="changeMap(2)">
+                        <div class="text">ЦЕНТРАЛЬНЫЙ ОФИС</div>
+                        <div class="mapM" id="place2"  :class="{active :  maps.tab===2}"></div>
+                        <div class="info">
+                            <div class="block-t">Центральный офис</div>
+                            <div class="text-block">
+                                <div class="title-i">Адрес</div>
+                                <div class="text-i">Республика Молдова, мун. Кишинев,
+                                    ул. Ион Прункул, 4/1
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <div class="title-i">Электронная почта</div>
+                                <div class="text-i">
+                                    <a href="">office@alex-se.com</a>
+                                </div>
+                            </div>
+                            <div class="text-block">
+                                <div class="title-i">Телефоны</div>
+                                <div class="text-i">
+                                    (+373) 22 24-45-72  — Офис<br>
+                                    (+373) 22 24-30-87  — Сервисный центр<br>
+                                    (+373) 22 29-67-29  — Факс<br>
+                                </div>
+                            </div>
+                        </div>
+        </div>
+                    <div class="link" :class="{active : maps.tab===3}" @click="changeMap(3)">
+                        <div class="text">ЦЕНТРАЛЬНЫЙ ОФИС</div>
+                        <div class="mapM" id="place3"  :class="{active :  maps.tab===3}"></div>
+                    <div class="info">
+                        <div class="block-t">Центральный офис</div>
+                        <div class="text-block">
+                            <div class="title-i">Адрес</div>
+                            <div class="text-i">Республика Молдова, мун. Кишинев,
+                                ул. Ион Прункул, 4/1
+                            </div>
+                        </div>
+                        <div class="text-block">
+                            <div class="title-i">Электронная почта</div>
+                            <div class="text-i">
+                                <a href="">office@alex-se.com</a>
+                            </div>
+                        </div>
+                        <div class="text-block">
+                            <div class="title-i">Телефоны</div>
+                            <div class="text-i">
+                                (+373) 22 24-45-72  — Офис<br>
+                                (+373) 22 24-30-87  — Сервисный центр<br>
+                                (+373) 22 29-67-29  — Факс<br>
+                            </div>
+                        </div>
+                    </div>
+            </div>
                 </div>
             </div>
         </div>
         <div class="maps-block" id="map">
             <div class="info">
+                <div class="block" v-if="maps.tab === 0 ">
+                    <div class="block-t">Центральный офис</div>
+                    <div class="text-block">
+                        <div class="title">Адрес</div>
+                        <div class="text">Республика Молдова, мун. Кишинев,
+                            ул. Ион Прункул, 4/1
+                        </div>
+                        <div class="text-block">
+                            <div class="title">Электронная почта</div>
+                            <div class="text">
+                                <a href="">office@alex-se.com</a>
+                            </div>
+                        </div>
+                        <div class="text-block">
+                            <div class="title">Телефоны</div>
+                            <div class="text">
+                                (+373) 22 24-45-72  — Офис<br>
+                                (+373) 22 24-30-87  — Сервисный центр<br>
+                                (+373) 22 29-67-29  — Факс<br>
+                            </div>
+                        </div>
+                        <div class="text-block">
+                            <div class="title">График работы</div>
+                            <div class="text">
+                                Пн. - Пт.  с 9:00 до 18:00<br>
+                                Сб. - Вс.  Выходные дни
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="block" v-if="maps.tab === 1 ">
                     <div class="block-t">Центральный офис</div>
                     <div class="text-block">
@@ -620,42 +796,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="block" v-if="maps.tab === 4 ">
-                    <div class="block-t">Центральный офис</div>
-                    <div class="text-block">
-                        <div class="title">Адрес</div>
-                        <div class="text">Республика Молдова, мун. Кишинев,
-                            ул. Ион Прункул, 4/1
-                        </div>
-                        <div class="text-block">
-                            <div class="title">Электронная почта</div>
-                            <div class="text">
-                                <a href="">office@alex-se.com</a>
-                            </div>
-                        </div>
-                        <div class="text-block">
-                            <div class="title">Телефоны</div>
-                            <div class="text">
-                                (+373) 22 24-45-72  — Офис<br>
-                                (+373) 22 24-30-87  — Сервисный центр<br>
-                                (+373) 22 29-67-29  — Факс<br>
-                            </div>
-                        </div>
-                        <div class="text-block">
-                            <div class="title">График работы</div>
-                            <div class="text">
-                                Пн. - Пт.  с 9:00 до 18:00<br>
-                                Сб. - Вс.  Выходные дни
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
             </div>
-            <div class="map" id="place1"  :class="{active :  maps.tab===1}"></div>
-            <div class="map" id="place2"  :class="{active :  maps.tab===2}"></div>
-            <div class="map" id="place3"  :class="{active :  maps.tab===3}"></div>
-            <div class="map" id="place4"  :class="{active :  maps.tab===4}"></div>
+            <div class="map active" id="mapGlobal"></div>
+
+
 
         </div>
     </section>
@@ -687,24 +832,24 @@
     </section>
     </div>
     <script>
-        window.markers ={
-            loc1:{
+        window.markers =[
+        {
                 lat: -25.363,
                 lng: 131.044
             },
-            loc2:{
+           {
                 lat: 25.363,
                 lng: 131.044
             },
-            loc3:{
+           {
                 lat: 25.363,
                 lng: -131.044
             },
-            loc4:{
+           {
                 lat: -25.363,
                 lng: -131.044
             }
-        };
+        ];
 //        function WhenGoogleLoaded(fnt) {
 //            if(typeof google != 'undefined')
 //                fnt();
@@ -714,20 +859,40 @@
 //                        WhenGoogleLoaded(fnt)
 //                    })(fnt)}, 500);
 //        }
-        function initMap() {
 
-                var place =window.markers.loc1;
-                var map =new google.maps.Map(document.getElementById('place1'),
-                    {
-                        zoom: 4,
-                        center: place
+
+        function initMap() {
+            if(window.innerWidth > 1270){
+                setTimeout(function(){
+                    window.mapGoogle = new google.maps.Map(document.getElementById('mapGlobal'), {
+                        zoom: 10,
+                        center: window.markers[0]
                     });
-                var marker = new google.maps.Marker({
-                    icon: '../img/pin.png',
-                    position: place,
-                    map: map
-                });
+                    window.markers.forEach(function(item){
+                        var marker = new google.maps.Marker({
+                            position: item,
+                            map: window.mapGoogle,
+                            icon: '../img/pin.png',
+                        });
+                    });
+                },300);
+            }else{
+                setTimeout(function(){
+                    var mapGoogle = new google.maps.Map(document.getElementById('place0'), {
+                        zoom: 10,
+                        center: window.markers[0]
+                    });
+                    window.markers.forEach(function(item){
+                        var marker = new google.maps.Marker({
+                            position: item,
+                            map: mapGoogle,
+                            icon: '../img/pin.png'
+                        });
+                    });
+                },300);
+            }
         }
+
     </script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPRVreyZqe4znwNHXDTx_wPSjSntFOADg&callback=initMap"></script>
 @stop
