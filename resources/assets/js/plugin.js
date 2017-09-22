@@ -10,7 +10,6 @@ Vue.component('modal', {
                    <g>
 	                    <path d="M336.559,68.611L231.016,174.165l105.543,105.549c15.699,15.705,15.699,41.145,0,56.85   c-7.844,7.844-18.128,11.769-28.407,11.769c-10.296,0-20.581-3.919-28.419-11.769L174.167,231.003L68.609,336.563   c-7.843,7.844-18.128,11.769-28.416,11.769c-10.285,0-20.563-3.919-28.413-11.769c-15.699-15.698-15.699-41.139,0-56.85   l105.54-105.549L11.774,68.611c-15.699-15.699-15.699-41.145,0-56.844c15.696-15.687,41.127-15.687,56.829,0l105.563,105.554   L279.721,11.767c15.705-15.687,41.139-15.687,56.832,0C352.258,27.466,352.258,52.912,336.559,68.611z"/>
                    </g>
-
                </svg>
             </div>
             <div class="modal-body" @click.stop>
@@ -105,9 +104,9 @@ window.page = new Vue({
     el:'#main',
     data:{
         call:{
-          name:'',
-          email:'',
-          s:false
+            name:'',
+            email:'',
+            s:false
         },
         callBack:false,
         block4:{
@@ -137,29 +136,29 @@ window.page = new Vue({
         validate(){
             this.$validator.validateAll().then((result) => {
                 if(result){
-                   this.call.name = '';
+                    this.call.name = '';
                     this.call.email = '';
                     this.callBack = true;
                     this.call.s=true;
-                   console.log('go');
+                    console.log('go');
                 }
             }).catch(() => {});
         },
         initMap(id) {
 
-                setTimeout(function(){
-                    console.log(window.markers[id])
-                    var map = new google.maps.Map(document.getElementById('place'+id), {
-                        zoom: 1,
-                        center: window.markers[id]
-                    });
-                    var marker = new google.maps.Marker({
-                        position: window.markers[id],
-                        map:map,
-                        icon: '/img/pin.png'
-                    });
-                    console.log(marker)
-                },300);
+            setTimeout(function(){
+                console.log(window.markers[id])
+                var map = new google.maps.Map(document.getElementById('place'+id), {
+                    zoom: 1,
+                    center: window.markers[id]
+                });
+                var marker = new google.maps.Marker({
+                    position: window.markers[id],
+                    map:map,
+                    icon: '/img/pin.png'
+                });
+                console.log(marker)
+            },300);
 
         },
         changeMap(id){
@@ -170,9 +169,9 @@ window.page = new Vue({
             }
             else{
 
-                 if(!(document.getElementById('place'+id).querySelector('.gm-style'))){
-                     this.initMap(id);
-                 }
+                if(!(document.getElementById('place'+id).querySelector('.gm-style'))){
+                    this.initMap(id);
+                }
 
             }
 
@@ -296,6 +295,6 @@ window.page = new Vue({
     }
 });
 $(window).resize(function(){
-   initMap();
+    initMap();
 
 });

@@ -1013,6 +1013,9 @@ ul {
     font-size: 27px;
   }
 }
+.gm-style-pbc {
+  display: none;
+}
 .block-desc {
   width: 970px;
   margin: 0 auto;

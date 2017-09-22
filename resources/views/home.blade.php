@@ -8,7 +8,7 @@
             <div class="header">
                 <div class="container">
                     <div class="row">
-                        <div class="logo"></div>
+                        <div class="logo" role="img" aria-label="logo" title="logo"></div>
                         <div class="phone">
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve" width="28px" height="28px">
                                         <g>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide" style="background-image: url('http://www.planwallpaper.com/static/images/ComputerDesktopWallpapersCollection540_047_inxQEjv.jpg')">
+                <div class="slide" role="img" aria-label="slide1" title="slide1" style="background-image: url('http://www.planwallpaper.com/static/images/ComputerDesktopWallpapersCollection540_047_inxQEjv.jpg')">
                     <div class="slide-content">
                         <div class="container">
                             <div class="slide-title">Хотите увеличить продажи на 30%?</div>
@@ -128,7 +128,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide" style="background-image: url('http://www.planwallpaper.com/static/images/dd170f37d84b3b21635f2ece8d416afa_large.jpeg')">
+                <div class="slide" role="img" aria-label="slide2" title="slide2" style="background-image: url('http://www.planwallpaper.com/static/images/dd170f37d84b3b21635f2ece8d416afa_large.jpeg')">
                     <div class="slide-content">
                         <div class="container">
                             <div class="slide-title">Хотите увеличить продажи на 30%?</div>
@@ -139,7 +139,7 @@
                     </div>
 
                 </div>
-                <div class="slide" style="background-image: url('http://www.planwallpaper.com/static/images/desktop-desktops-highway-night-photo-hdwallpapers2016com.jpg')">
+                <div class="slide" role="img" aria-label="slide3" title="slide3" style="background-image: url('http://www.planwallpaper.com/static/images/desktop-desktops-highway-night-photo-hdwallpapers2016com.jpg')">
                     <div class="slide-content">
                         <div class="container">
                             <div class="slide-title">Хотите увеличить продажи на 30%?</div>
@@ -149,7 +149,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide" style="background-image: url('http://www.planwallpaper.com/static/images/Full-HD-Wallpapers-5A9.jpg')">
+                <div class="slide" role="img" aria-label="slide4" title="slide4" style="background-image: url('http://www.planwallpaper.com/static/images/Full-HD-Wallpapers-5A9.jpg')">
                     <div class="slide-content">
                         <div class="container">
                             <div class="slide-title">Хотите увеличить продажи на 30%?</div>
@@ -181,27 +181,27 @@
                 </div>
                 <ul class="list">
                     <li>
-                        <div class="icon"><img src="./img/au1.png" alt=""></div>
+                        <div class="icon"><img src="./img/au1.png" alt="icon1"></div>
                         <div class="title">Контроль</div>
                         <div class="text">Наше программное обеспечение и специальное оборудование соединя</div>
                     </li>
                     <li>
-                        <div class="icon"><img src="./img/au2.png" alt=""></div>
+                        <div class="icon"><img src="./img/au2.png" alt="icon2"></div>
                         <div class="title">Контроль</div>
                         <div class="text">Наше программное обеспечение и специальное оборудование соединя</div>
                     </li>
                     <li>
-                        <div class="icon"><img src="./img/au3.png" alt=""></div>
+                        <div class="icon"><img src="./img/au3.png" alt="icon3"></div>
                         <div class="title">Контроль</div>
                         <div class="text">оборудование соединяаше программное обеспечение оборудование соединяоборудование соединяоборудование соединяоборудование соединяоборудование соединяи специальное оборудование соединя</div>
                     </li>
                     <li>
-                        <div class="icon"><img src="./img/au4.png" alt=""></div>
+                        <div class="icon"><img src="./img/au4.png" alt="icon4"></div>
                         <div class="title">Контроль</div>
                         <div class="text">оборудование соединяоборудование соединя программное обеспечение и специальное оборудование соединя</div>
                     </li>
                     <li>
-                        <div class="icon"><img src="./img/au5.png" alt=""></div>
+                        <div class="icon"><img src="./img/au5.png" alt="icon5"></div>
                         <div class="title">Контроль</div>
                         <div class="text">Наше программное обеспечение и специальное оборудование соединя</div>
                     </li>
@@ -232,14 +232,14 @@
             <div class="block-title">Выполненные проекты</div>
             <div class="toggle-block">
                 <div class="title" @click="changeSlid(1)" :class="{active : block4.slid === 1}">Торговля</div>
-            <div class="toggle" @click="changeSlid(3)">
-                <div class="spinn"  :class="{active : block4.slid === 2}"></div>
-    </div>
-    <div class="title" @click="changeSlid(2)" :class="{active : block4.slid === 2}">Рестораны</div>
-    </div>
+                <div class="toggle" @click="changeSlid(3)">
+                    <div class="spinn"  :class="{active : block4.slid === 2}"></div>
+                </div>
+                <div class="title" @click="changeSlid(2)" :class="{active : block4.slid === 2}">Рестораны</div>
+            </div>
     <div class="slider" id="sales" v-if="block4.slid === 1">
         <div class="slide" id="sal1">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_1" title="logo_proj_1" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -249,13 +249,13 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_1"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_2"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj1_img_1" title="proj1_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_1"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj1_img_2" title="proj1_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_2"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
         <div class="slide" id="sal2">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_2" title="logo_proj_2" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -265,13 +265,13 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal2_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal2_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj2_img_1" title="proj2_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal2_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj2_img_2" title="proj2_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal2_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
         <div class="slide" id="sal3">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_3" title="logo_proj_3" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -281,13 +281,13 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal3_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal3_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj3_img_1" title="proj3_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal3_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj3_img_2" title="proj3_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal3_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
         <div class="slide" id="sal4">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_4" title="logo_proj_4" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -297,13 +297,13 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal4_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal4_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj4_img_1" title="proj4_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal4_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj4_img_2" title="proj4_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal4_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
         <div class="slide" id="sal5">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_5" title="logo_proj_5" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -313,13 +313,13 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal5_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal5_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img"  alt="proj5_img_1" title="proj5_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal5_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img"  alt="proj5_img_2" title="proj5_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal5_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
         <div class="slide" id="sal6">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_6" title="logo_proj_6" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -329,13 +329,13 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg"  data-lightbox="sal6_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal6_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img"  alt="proj6_img_1" title="proj6_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg"  data-lightbox="sal6_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img"  alt="proj6_img_2" title="proj6_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal6_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
         <div class="slide">
-            <div class="logo" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+            <div class="logo" role="img" aria-label="logo_proj_7" title="logo_proj_7" style="background-image:url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -345,8 +345,8 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="roadtrip_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="roadtrip_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj7_img_1" title="proj7_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="roadtrip_1" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <a class="img" alt="proj7_img_2" title="proj7_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="roadtrip_2" rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
 
             </div>
         </div>
@@ -354,7 +354,7 @@
     </div>
     <div class="slider" id="restaurants" v-if="block4.slid === 2">
         <div class="slide">
-            <div class="logo" style="background-image:url(https://orig13.deviantart.net/e143/f/2011/241/8/7/bmw_logo_512_png_by_mahesh69a-d48alga.png)"></div>
+            <div class="logo" role="img" aria-label="logo_rest_1" title="logo_rest_1" style="background-image:url(https://orig13.deviantart.net/e143/f/2011/241/8/7/bmw_logo_512_png_by_mahesh69a-d48alga.png)"></div>
             <div class="task block">
                 <div class="title">Задача</div>
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
@@ -364,7 +364,7 @@
                 <div class="text">Жёсткая конкуренция/ Привлечь новых покупателей</div>
             </div>
             <div class="imgs">
-                <div class="img" style="background-image:url(http://rtr.md/wp-content/uploads/2017/08/greenhills031207_20.jpg)"></div>
+                <div class="img"  style="background-image:url(http://rtr.md/wp-content/uploads/2017/08/greenhills031207_20.jpg)"></div>
                 <div class="img" style="background-image:url(http://rtr.md/wp-content/uploads/2017/08/greenhills031207_20.jpg)"></div>
             </div>
         </div>
@@ -476,31 +476,31 @@
         <div class="container">
             <div class="slider">
                 <div class="slide">
-                    <div class="img" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
+                    <div class="img" role="img" aria-label="prod1" title="prod1" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
                     <div class="title">МОНИТОР  «ALEX TOUCH 15’’M»</div>
                     <div class="text">Позволяет эффекtтивно и экономно использовать пространство на рабочем месте</div>
 
                 </div>
                 <div class="slide">
-                    <div class="img" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
+                    <div class="img" role="img" aria-label="prod2" title="prod2" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
                     <div class="title">МОНИТОР  «ALEX TOUCH 15’’M»</div>
                     <div class="text">Позволяет эффекtтивно и экономно использовать пространство на рабочем месте</div>
 
                 </div>
                 <div class="slide">
-                    <div class="img" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
+                    <div class="img" role="img" aria-label="prod3" title="prod3" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
                     <div class="title">МОНИТОР  «ALEX TOUCH 15’’M»</div>
                     <div class="text">Позволяет эффекtтивно и экономно использовать пространство на рабочем месте</div>
 
                 </div>
                 <div class="slide">
-                    <div class="img" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
+                    <div class="img" role="img" aria-label="prod4" title="prod4" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
                     <div class="title">МОНИТОР  «ALEX TOUCH 15’’M»</div>
                     <div class="text">Позволяет эффекtтивно и экономно использовать пространство на рабочем месте</div>
 
                 </div>
                 <div class="slide">
-                    <div class="img" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
+                    <div class="img" role="img" aria-label="prod4" title="prod4" style=" background-image: url(https://i.simpalsmedia.com/marketplace/products/original/bc89a34b9bd3c1433093b6c7c859a1bf.jpg)"></div>
                     <div class="title">МОНИТОР  «ALEX TOUCH 15’’M»</div>
                     <div class="text">Позволяет эффекtтивно и экономно использовать пространство на рабочем месте</div>
 
@@ -514,13 +514,13 @@
         <div class="block-title">Нам доверяют</div>
         <div class="container">
             <div class="slider">
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
-                <div class="slide" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part1" title="part1" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part2" title="part2" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part3" title="part3" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part4" title="part4" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part5" title="part5" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part6" title="part6" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
+                <div class="slide" role="img" aria-label="part7" title="part7" style=" background-image: url(http://unic-tokyo.com/wp/wp-content/uploads/2016/12/p4.png)"></div>
             </div>
         </div>
         <div class="container"></div>
@@ -807,7 +807,7 @@
     <section class="footer">
         <div class="container">
             <div class="row">
-                <div class="footer-logo"></div>
+                <div class="footer-logo" role="img" aria-label="flogo" title="flogo"></div>
                 <div class="phones">
                     <div class="phone">+373 69 900 989</div>
                     <div class="phone">+373 22 244 572</div>
@@ -820,10 +820,10 @@
                     <div class="social" style="background-image:url(../img/inst.png)"></div>
                     <div class="social" style="background-image:url(../img/yt.png)"></div>
                 </div>
-                <div class="uniweb">
+                <a href="#" class="uniweb">
                     <span class="produced">Разработка сайта </span>
-                    <div class="img"></div>
-                </div>
+                    <div class="img" role="img" aria-label="uniweb" title="uniweb"></div>
+                </a>
 
             </div>
 
