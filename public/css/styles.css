@@ -997,6 +997,26 @@ ul {
 .slick-slide {
   outline: none;
 }
+.player {
+  margin: -56px -55px;
+}
+.you {
+  position: relative;
+}
+.you:after {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/youtube.png);
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+}
+.video {
+  right: -100px;
+}
 .block-title {
   padding-top: 45px;
   width: 100%;

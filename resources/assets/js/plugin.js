@@ -1,5 +1,7 @@
 'use strict';
 // import gmap from './components/googlemap';
+import VueYouTubeEmbed from 'vue-youtube-embed'
+Vue.use(VueYouTubeEmbed);
 Vue.component('modal', {
     template: `<transition name="modal">
    <div class="modal-mask" @click="$emit(\'close\')">
@@ -103,10 +105,13 @@ window.proj = function(id){
 window.page = new Vue({
     el:'#main',
     data:{
+        videoId:'',
         call:{
             name:'',
             email:'',
-            s:false
+            s:false,
+            video:false,
+
         },
         callBack:false,
         block4:{
@@ -118,6 +123,21 @@ window.page = new Vue({
 
     },
     methods:{
+        videoWatch(id){
+
+            this.videoId=id;
+            console.log(id);
+            setTimeout(function(){
+               window.page.callBack=true;
+               window.page.video=true;
+
+            },100);
+            setTimeout(function(){
+                $('.modal-close').addClass('video');
+            },500);
+
+
+        },
         moveTo(id){
             $('html, body').animate({
                 scrollTop: $("."+id).offset().top -65
@@ -129,6 +149,7 @@ window.page = new Vue({
             this.call.email = '';
             this.callBack = false;
             this.call.s=false;
+            this.video=false;
         },
         removeError(name){
             this.errors.remove(name);

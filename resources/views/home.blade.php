@@ -55,8 +55,8 @@
                         </ul>
                     </div>
                 </div>
-                <modal v-if="callBack" v-on:close="closeMod" v-cloak class="modal-base callback mobilemenu">
-                    <section v-if="call.s === false">
+                <modal v-if="callBack" v-on:close="closeMod"  v-cloak class="modal-base callback mobilemenu" >
+                    <section v-if="call.s === false && video ===false ">
                         <div class="modal-title">Мы Вам перезвоним</div>
                         <div class="modal-input">
                             <input type="text"
@@ -101,9 +101,15 @@
                         </div>
                         <div class="send-butt" @click="validate">заказать звонок</div>
                     </section>
-                    <section v-if="call.s === true">
+                    <section v-if="call.s === true && video ===false">
                         <div class="modal-title">Заявка отправлена!</div>
                     </section>
+                    <transition name="fade">
+                        <section v-if="video ===true && call.s === false">
+                            <youtube class="player" :video-id="videoId" :player-width="640" :player-height="390"></youtube>
+                        </section>
+                    </transition>
+
 
                 </modal>
             </div>
@@ -250,7 +256,7 @@
             </div>
             <div class="imgs">
                 <a class="img" alt="proj1_img_1" title="proj1_img_1" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_1"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
-                <a class="img" alt="proj1_img_2" title="proj1_img_2" href="https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg" data-lightbox="sal1_2"  rel='lightbox' style="background-image:url(https://i.ytimg.com/vi/-lLFuSUiiUA/maxresdefault.jpg)"></a>
+                <div class="img you" :style="{backgroundImage:'url(https://img.youtube.com/vi/'+ 'lXbzua0ZTSM' +'/sddefault.jpg'}"  @click="videoWatch('lXbzua0ZTSM')"></div>
 
             </div>
         </div>
@@ -350,7 +356,6 @@
 
             </div>
         </div>
-
     </div>
     <div class="slider" id="restaurants" v-if="block4.slid === 2">
         <div class="slide">
@@ -803,6 +808,8 @@
 
 
         </div>
+    </section>
+    <section>
     </section>
     <section class="footer">
         <div class="container">
